@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptixMovies", "OptixMovies\OptixMovies.csproj", "{953BC495-20DE-431F-A40A-DB48A7DC2233}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{953BC495-20DE-431F-A40A-DB48A7DC2233}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{953BC495-20DE-431F-A40A-DB48A7DC2233}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{953BC495-20DE-431F-A40A-DB48A7DC2233}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{953BC495-20DE-431F-A40A-DB48A7DC2233}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0133E166-BCC7-40ED-85E2-F888509DDDFE}
+	EndGlobalSection
+EndGlobal

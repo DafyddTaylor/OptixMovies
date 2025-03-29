@@ -1,0 +1,6 @@
+@OptixMovies_HostAddress = http://localhost:5209
+
+GET {{OptixMovies_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
