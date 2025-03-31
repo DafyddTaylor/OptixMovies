@@ -1,13 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 namespace OptixMovies.Models;
 
 public partial class OptixMovieDbContext : DbContext
 {
+    private static readonly IConfiguration _configuration;
+
+    static OptixMovieDbContext()
+    {
+        _configuration = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            .Build();
+    }
     public OptixMovieDbContext()
     {
+
     }
 
     public OptixMovieDbContext(DbContextOptions<OptixMovieDbContext> options)
@@ -24,8 +35,9 @@ public partial class OptixMovieDbContext : DbContext
     public virtual DbSet<Mymoviedb> Mymoviedbs { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        => optionsBuilder.UseSqlServer(_configuration["ConnectionStrings:MyConnection"]);
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=OptixMovieDB;User Id=MovieDBUser;Password=@Password123;Trusted_Connection=True;TrustServerCertificate=True");
+    // => optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=OptixMovieDB;User Id=MovieDBUser;Password=@Password123;Trusted_Connection=True;TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
